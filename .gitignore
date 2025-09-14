@@ -1,0 +1,43 @@
+# === CLion и IDE ===
+.cmake/
+cmake-build-*/
+*.swp
+*.swo
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# === CMake ===
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+Makefile
+CTestTestfile.cmake
+_deps/
+
+# === Компилятор и сборка ===
+*.o
+*.out
+*.exe
+*.a
+*.so
+*.dylib
+*.dll
+build/
+dist/
+__pycache__/
+
+# === ОС и редакторы ===
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.backup
+*.old
+
+# === Логи и временные файлы ===
+logs/
+*.log
+temp/
+tmp/
