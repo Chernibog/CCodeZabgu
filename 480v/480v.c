@@ -10,7 +10,7 @@ int main() {
     FILE *file_f = fopen("480v\\f.txt", "r"); //FILE - тип данных
     FILE *file_g = fopen("480v\\g.txt", "w");
 
-
+//поиск компонентов, которые делятся на 3 и не делятся на 7
     while (fscanf(file_f, "%d", &number) == 1) {
         if(number % 3==0 && number % 7 > 0) {
             fprintf(file_g,"%d\n",number);
