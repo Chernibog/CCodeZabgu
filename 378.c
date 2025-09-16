@@ -1,7 +1,8 @@
 /*
 
 Автор: Шумилко Н.Д. (4 вариант) (https://github.com/VetrovSV/OOP/blob/master/C/tasks.md)          <- ссылка на табличку с заданиями
-                                  (https://bgu-chita.ru/zadachnik/Glava01/index01.htm#z378)        <- ссылка на задание (найти самому)
+                                  (https://bgu-chita.ru/zadachnik/Glava01/index01.htm#z378)        <- ссылка на задание
+                                  
 
 Задача 378а:
 Даны действительные числа x1, ..., x8. Получить действительную квадратную матрицу порядка 8:
