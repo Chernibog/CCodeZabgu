@@ -17,10 +17,7 @@ int main() {
 
     // Выделяем память под одномерный массив, который будет хранить элементы матрицы n x n
     int *matrix = (int *)malloc(n * n * sizeof(int));
-    if (!matrix) {
-        fprintf(stderr, "Ошибка выделения памяти!\n");
-        return 1;
-    }
+
 
     // Заполняем матрицу
     fill_matrix(matrix, n);
