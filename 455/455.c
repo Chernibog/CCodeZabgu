@@ -1,3 +1,4 @@
+//https://ivtipm.github.io/Programming/Glava12/index12.htm
 #include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
