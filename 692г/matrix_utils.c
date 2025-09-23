@@ -10,7 +10,7 @@ void fill_matrix(int *matrix, int n) {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             printf("Элемент [%d][%d]: ", i, j);
-            scanf("%d", &matrix[i * n + j]); // Сохраняем в "плоский" массив
+            scanf("%d", &matrix[i * n + j]); // Сохраняем в массив
         }
     }
 }
