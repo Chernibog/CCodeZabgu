@@ -15,30 +15,24 @@ int main() {
     SetConsoleOutputCP(CP_UTF8);
 
     int n;
-
     printf("Введите размер матрицы n: ");
     scanf("%d", &n);
 
-    //присвоение значение n строкам и колонкам
-    int rows = n;
-    int cols = n;
+    // Выделяем память под матрицу как массив указателей
+    int **matrix = (int **)malloc(n * sizeof(int *));
+    for (int i = 0; i < n; i++) {
+        matrix[i] = (int *)malloc(n * sizeof(int));
+    }
 
-    // Выделяем память под матрицу и векторы
-    int *matrix = (int *)malloc(rows * cols * sizeof(int));
+    // Выделяем память под векторы
     int *vector = (int *)malloc(n * sizeof(int));
     int *vector_answer = (int *)calloc(n, sizeof(int));
 
-//  --- иное обьявление динамической матрицы ---
-//    int **matr = malloc(n * sizeof(int*));		// выделена память под n указателей на массивы
-//    for (size_t i = 0; i<n; i++)	// перебор номеров строк
-//        matr[i] = malloc(m * sizeof(int));
-
-
     // Вводим элементы матрицы
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
             printf("Введите элемент матрицы [%d][%d]: ", i, j);
-            scanf("%d", &matrix[i * cols + j]);
+            scanf("%d", &matrix[i][j]);
         }
     }
 
@@ -48,15 +42,15 @@ int main() {
         scanf("%d", &vector[i]);
     }
 
-    // Вычитаем единичную матрицу
-    for (int i = 0; i < rows; i++) {
-        matrix[i * cols + i] -= 1;
+    // Вычитаем единичную матрицу: A = A - E
+    for (int i = 0; i < n; i++) {
+        matrix[i][i] -= 1;
     }
 
     // Умножение матрицы (A - E) на вектор b
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            vector_answer[i] += matrix[i * cols + j] * vector[j];
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            vector_answer[i] += matrix[i][j] * vector[j];
         }
     }
 
@@ -68,6 +62,9 @@ int main() {
     printf("\n");
 
     // Освобождаем память
+    for (int i = 0; i < n; i++) {
+        free(matrix[i]);
+    }
     free(matrix);
     free(vector);
     free(vector_answer);
