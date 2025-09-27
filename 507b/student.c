@@ -1,12 +1,13 @@
 // student.c
+// Функция загружает данные об учениках из текстового файла по указанному пути
+// Возвращает количество успешно загруженных студентов
 #include "student.h"
 #include <windows.h>
 #include <stdio.h>
 
-// Функция загружает данные об учениках из текстового файла по указанному пути
-// Возвращает количество успешно загруженных студентов
+
 int load_students(const char *filename, Student students[]) {
-    // Открываем файл для чтения
+    // Открываем файл для чтения - r - read
     FILE *file = fopen(filename, "r");
 
     // Счётчик успешно загруженных студентов
@@ -16,10 +17,10 @@ int load_students(const char *filename, Student students[]) {
 
     // Читаем файл построчно, пока не достигнем конца или лимита массива
     while (fgets(line, sizeof(line), file) && count < MAX_STUDENTS) {
-        // Удаляем символ новой строки в конце строки, если он есть
+        // Удаляем символ новой строки в конце строки (strcspn)
         line[strcspn(line, "\n")] = '\0';
 
-        // Контекст для работы с strtok_s — позволяет разбивать строку на части
+        //  context - переменная, чтобы разбить строку на части
         char *context;
         // Извлекаем имя (первая часть до пробела)
         char *name = strtok_s(line, " ", &context);
@@ -85,4 +86,5 @@ void find_classmates_in_parallel_classes(const Student students[], int count) {
     if (!found) {
         printf("Однофамильцев в параллельных классах не найдено.\n");
     }
+
 }
