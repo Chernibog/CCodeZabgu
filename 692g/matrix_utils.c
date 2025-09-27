@@ -1,7 +1,8 @@
 // matrix_utils.c
+
 #include <stdio.h>
 #include "matrix_utils.h"
-
+//заполнение матрицы
 void fill_matrix(int **matrix, int n) {
     printf("Введите элементы матрицы:\n");
     for (int i = 0; i < n; i++) {
@@ -11,15 +12,17 @@ void fill_matrix(int **matrix, int n) {
         }
     }
 }
-
+//поиск максимального значения
 int max_in_trian_matrix(int **matrix, int n) {
     // Инициализируем максимальное значение первым элементом треугольной области
     int max_value;
+    //флаг для отслеживания заполности области
     int found = 0;
 
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             if (j >= n - i - 1 && j <= i) {
+                //присвоение первого значения матрицы (если все элементы матрицы отрицательные)
                 if (!found) {
                     max_value = matrix[i][j];
                     found = 1;
