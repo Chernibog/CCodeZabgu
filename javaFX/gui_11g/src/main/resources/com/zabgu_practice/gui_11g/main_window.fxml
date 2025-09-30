@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="338.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zabgu_practice.gui_11g.MainWindow_controller">
+   <children>
+      <Label fx:id="lable_txt_1" layoutX="387.0" layoutY="30.0" text="задание 11" />
+      <Label fx:id="label_txt_2" layoutX="387.0" layoutY="60.0" text="вычислить а,b" />
+      <Label fx:id="lable_text_3" layoutX="388.0" layoutY="92.0" text="a = y + x / (y² + √|y + x³/3|)," />
+      <Label fx:id="lable_text_4" layoutX="388.0" layoutY="120.0" text="b = (1 + tg²(z/2))" />
+      <Label fx:id="lable_txt_x" layoutX="21.0" layoutY="39.0" text="x = " />
+      <TextField fx:id="field_x" layoutX="56.0" layoutY="35.0" prefHeight="26.0" prefWidth="61.0" />
+      <TextField fx:id="field_y" layoutX="55.0" layoutY="71.0" prefHeight="26.0" prefWidth="62.0" />
+      <TextField fx:id="field_z" layoutX="55.0" layoutY="106.0" prefHeight="26.0" prefWidth="62.0" />
+      <Label fx:id="lable_txt_y" layoutX="20.0" layoutY="75.0" prefHeight="18.0" prefWidth="21.0" text="y = " />
+      <Label fx:id="lable_txt_z" layoutX="20.0" layoutY="111.0" text="z = " />
+
+      <Button fx:id="button_culk" layoutX="203.0" layoutY="245.0" mnemonicParsing="false" onMouseClicked="#calc_button_cliked" prefHeight="58.0" prefWidth="194.0" style="-fx-background-color: #4564ff;" text="посчитать" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font></Button>
+
+      <Label layoutX="104.0" layoutY="173.0" text="Ответ" />
+
+      <Label fx:id="label_a_answ" layoutX="187.0" layoutY="173.0" />
+
+      <Label fx:id="label_b_answ" layoutX="187.0" layoutY="207.0" />
+
+      <Label layoutX="146.0" layoutY="173.0" text="a = " />
+      <Label layoutX="146.0" layoutY="207.0" text="b = " />
+   </children>
+</AnchorPane>
