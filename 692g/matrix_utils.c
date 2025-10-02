@@ -26,7 +26,7 @@ int max_in_trian_matrix(int **matrix, int n) {
                 if (!found) {
                     max_value = matrix[i][j];
                     found = 1;
-                } else if (matrix[i][j] > max_value) {
+                } else (matrix[i][j] > max_value) {
                     max_value = matrix[i][j];
                 }
             }
