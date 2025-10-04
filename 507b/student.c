@@ -7,15 +7,15 @@
 
 
 int load_students(const char *filename, Student students[]) {
-    // Открываем файл для чтения - r - read
+    // открываем файл для чтения - r - read
     FILE *file = fopen(filename, "r");
 
-    // Счётчик успешно загруженных студентов
+    // счетчик успешно загруженных студентов
     int count = 0;
     // Буфер для хранения одной строки из файла
     char line[MAX_LINE];
 
-    // Читаем файл построчно, пока не достигнем конца или лимита массива
+    // читаем файл построчно, пока не достигнем конца или лимита массива
     while (fgets(line, sizeof(line), file) && count < MAX_STUDENTS) {
         // Удаляем символ новой строки в конце строки (strcspn)
         line[strcspn(line, "\n")] = '\0';
@@ -91,4 +91,5 @@ void find_classmates_in_parallel_classes(const Student students[], int count) {
     }
 
 }
+
 
