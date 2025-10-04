@@ -22,6 +22,8 @@ int load_students(const char *filename, Student students[]) {
 
         //  context - переменная, чтобы разбить строку на части
         char *context;
+
+        //strtok - разбитие строки на части
         // Извлекаем имя (первая часть до пробела)
         char *name = strtok_s(line, " ", &context);
         // Извлекаем фамилию (часть после пробела до запятой)
@@ -60,21 +62,22 @@ void find_classmates_in_parallel_classes(const Student students[], int count) {
     for (int i = 0; i < count; i++) {
         // Сравниваем текущего студента со всеми последующими
         for (int j = i + 1; j < count; j++) {
-            // Проверяем три условия:
-            // 1. Одинаковая фамилия
-            // 2. Одинаковый год обучения
-            // 3. Разная буква класса (параллельные классы)
+            
+            // проверяем с помощью strcmp (сравнение строк) три условия:
+            // 1. одинаковая фамилия
+            // 2. оинаковый год обучения
+            // 3. разная буква класса (параллельные классы)
             if (strcmp(students[i].surname, students[j].surname) == 0 &&
                 students[i].grade == students[j].grade &&
                 students[i].letter != students[j].letter) {
 
-                // Если это первая найденная пара — выводим заголовок
+                // если первая пара найдена — выводим заголовок
                 if (!found) {
                     printf("Однофамильцы в параллельных классах:\n");
                     found = 1;
                 }
 
-                // Выводим информацию о двух однофамильцах
+                // Вывод информации о двух однофамильцах
                 printf("%s %s (%d%c) и %s %s (%d%c)\n",
                        students[i].name, students[i].surname, students[i].grade, students[i].letter,
                        students[j].name, students[j].surname, students[j].grade, students[j].letter);
@@ -88,3 +91,4 @@ void find_classmates_in_parallel_classes(const Student students[], int count) {
     }
 
 }
+
