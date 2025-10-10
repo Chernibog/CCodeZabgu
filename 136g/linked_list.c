@@ -1,4 +1,4 @@
-// main.c
+// linked_list.c
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -32,4 +32,5 @@ int main() {
 
     printf("%lld\n", summ);
     return 0;
+
 }
