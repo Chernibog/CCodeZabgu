@@ -11,7 +11,7 @@ int main() {
 
     int n, number_list;
     long long summ = 1;
-
+    //обьявление головы списка
     Node* head = NULL;
 
     printf("Введите кол-во чисел: ");
@@ -34,3 +34,4 @@ int main() {
     return 0;
 
 }
+
