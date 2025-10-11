@@ -26,6 +26,7 @@ int main() {
     //current - "временный указатель, чтобы проходить по списку"
     Node* current = head;
     while (current != NULL) {
+        //из узла, который указывает current берем data
         summ *= abs(current->data);
         current = current->next;
     }
@@ -34,4 +35,5 @@ int main() {
     return 0;
 
 }
+
 
